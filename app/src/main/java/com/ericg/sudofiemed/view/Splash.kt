@@ -5,7 +5,6 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -28,8 +27,9 @@ class Splash : Fragment() {
         splashBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_splash, container, false)
         return splashBinding?.root.apply {
-                Glide.with(this!!).load("https://www.google.com/url?sa=i&url=https%3A%2F%2Fthreatpost.com%2Fundeletable-malware-yet-another-android-device%2F157289%2F&psig=AOvVaw01gb5U_XI9MFIpYPq2UljO&ust=1607823311573000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjt7bCnx-0CFQAAAAAdAAAAABAO")
-                    .into(splashBinding!!.splashImage)
+            Glide.with(this!!)
+                .load("https://www.google.com/url?sa=i&url=https%3A%2F%2Fthreatpost.com%2Fundeletable-malware-yet-another-android-device%2F157289%2F&psig=AOvVaw01gb5U_XI9MFIpYPq2UljO&ust=1607823311573000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjt7bCnx-0CFQAAAAAdAAAAABAO")
+                .into(splashBinding!!.splashImage)
 
             DataStorePrefs(requireContext()).showOnBoard.observe(viewLifecycleOwner, {
                 showOnBoardScreen = it
@@ -48,7 +48,6 @@ class Splash : Fragment() {
             } else {
                 toast("nav to home coming soon", Extensions.ToastDuration.SHORT)
             }
-
         }, 3000)
     }
 
