@@ -20,7 +20,7 @@ class OnBoard1 : Fragment() {
         onBoard1Binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_on_board1, container, false)
         return onBoard1Binding?.root.apply {
-            // access view here
+
         }
     }
 
