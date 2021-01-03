@@ -35,7 +35,7 @@ class OnBoardViewPager : Fragment() {
             onBoardViewPagerBinding?.onBoardViewPager2?.let {
                 it.adapter = viewPagerAdapter
                 it.setOnDragListener { view, event ->
-                    if (event.x > 1){
+                    if (event.y < 1){
                         toast("+ve event captured", Extensions.ToastDuration.LONG)
                     }
                     true
