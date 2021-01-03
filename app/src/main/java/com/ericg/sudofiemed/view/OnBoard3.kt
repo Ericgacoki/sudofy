@@ -1,6 +1,8 @@
 package com.ericg.sudofiemed.view
 
 import android.app.AlertDialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,10 +32,10 @@ class OnBoard3 : Fragment() {
     }
 
     private fun showAgreementDialog() {
-        val dialog = AlertDialog.Builder(this@OnBoard3.requireContext()).create()
+        val dialog = AlertDialog.Builder(requireContext()).create()
         dialog.apply {
-            setContentView(layoutInflater.inflate(R.layout.agreement_dialog, null))
-            // window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            setView(layoutInflater.inflate(R.layout.agreement_dialog, null))
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         }.show()
     }
 

@@ -3,10 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,36 +17,42 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/dotsLayOnB1"
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            app:flow_horizontalGap="5dp"
             android:orientation="horizontal"
+            app:flow_wrapMode="none"
+            app:layout_constraintVertical_bias="0.95"
+            android:foregroundGravity="center"
+            app:flow_horizontalStyle="spread"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.95">
+            app:constraint_referenced_ids="dot1on1,dot2on1,dot3on1"
+            />
 
             <ImageView
+                android:id="@+id/dot1on1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:src="@drawable/ic_dot_selected" />
 
             <ImageView
+                android:id="@+id/dot2on1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:src="@drawable/ic_dot_not_selected" />
 
             <ImageView
+                android:id="@+id/dot3on1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:src="@drawable/ic_dot_not_selected" />
-        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
