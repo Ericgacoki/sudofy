@@ -55,6 +55,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/btnDoneOnBoard"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:background="@drawable/btn_done"

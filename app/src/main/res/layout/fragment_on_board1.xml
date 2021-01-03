@@ -52,6 +52,5 @@
                 android:src="@drawable/ic_dot_not_selected" />
         </LinearLayout>
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
