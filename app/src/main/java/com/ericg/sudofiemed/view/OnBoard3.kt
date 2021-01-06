@@ -22,7 +22,6 @@ import kotlinx.coroutines.launch
 
 class OnBoard3 : Fragment() {
     private var onBoard3Binding: FragmentOnBoard3Binding? = null
-    // lateinit var dialog: Dialog
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,25 +33,25 @@ class OnBoard3 : Fragment() {
             DataBindingUtil.inflate(inflater, R.layout.fragment_on_board3, container, false)
         return onBoard3Binding?.root.apply {
             onBoard3Binding?.btnDoneOnBoard?.setOnClickListener {
-                showAgreementDialog()
-
+                showAgreementDialog(container)
             }
         }
     }
 
-    private fun showAgreementDialog() {
-        val dialogObject: AgreementDialogBinding = AgreementDialogBinding.inflate(layoutInflater,null,false)
-        dialogObject.btnProceed.let {
-            it.setOnClickListener {
-                if (dialogObject.termsCheckBox.isChecked && dialogObject.analyticsCheckBox.isChecked) {
-                    proceedToFirstAids()
-                } else toast("please check all boxes", Extensions.ToastDuration.SHORT)
-            }
+    private fun showAgreementDialog(container: ViewGroup?) {
+        val dialog = AlertDialog.Builder(requireContext()).create()
+        val dialogObject: AgreementDialogBinding =
+            DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.agreement_dialog, container, false)
+        dialogObject.btnProceed.setOnClickListener {
+            if (dialogObject.termsCheckBox.isChecked && dialogObject.analyticsCheckBox.isChecked) {
+                dialog.dismiss()
+                proceedToFirstAids()
+            } else toast("please check all boxes", Extensions.ToastDuration.SHORT)
         }
 
-        val dialog = AlertDialog.Builder(requireContext()).create()
+
         dialog.apply {
-            setView(layoutInflater.inflate(R.layout.agreement_dialog, null))
+            setView(dialogObject.root)
             window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         }.show()
     }
