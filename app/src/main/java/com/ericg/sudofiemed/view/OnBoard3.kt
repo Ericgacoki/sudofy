@@ -40,18 +40,18 @@ class OnBoard3 : Fragment() {
 
     private fun showAgreementDialog(container: ViewGroup?) {
         val dialog = AlertDialog.Builder(requireContext()).create()
-        val dialogObject: AgreementDialogBinding =
+
+        val dialogBinding: AgreementDialogBinding =
             DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.agreement_dialog, container, false)
-        dialogObject.btnProceed.setOnClickListener {
-            if (dialogObject.termsCheckBox.isChecked && dialogObject.analyticsCheckBox.isChecked) {
+        dialogBinding.btnProceed.setOnClickListener {
+            if (dialogBinding.termsCheckBox.isChecked && dialogBinding.analyticsCheckBox.isChecked) {
                 dialog.dismiss()
                 proceedToFirstAids()
             } else toast("please check all boxes", Extensions.ToastDuration.SHORT)
         }
 
-
         dialog.apply {
-            setView(dialogObject.root)
+            setView(dialogBinding.root)
             window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         }.show()
     }
