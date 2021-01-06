@@ -8,7 +8,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageViewFAids"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:contentDescription="@string/top_image"
@@ -20,20 +20,31 @@
 
         <SearchView
             android:id="@+id/searchView"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
+            android:layout_marginHorizontal="10dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/round_search_view"
             android:queryHint="looking for?"
             android:saveEnabled="true"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewFAids"
+            app:layout_constraintEnd_toStartOf="@+id/settings"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/settings_icon"
+            android:src="@drawable/ic_settings"
+            app:layout_constraintBottom_toBottomOf="@id/searchView"
+            app:layout_constraintEnd_toEndOf="@id/imageViewFAids"
+            app:layout_constraintTop_toTopOf="@id/searchView" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/firstAidsRecyclerview"

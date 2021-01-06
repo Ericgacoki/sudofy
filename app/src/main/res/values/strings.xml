@@ -3,4 +3,5 @@
     <string name="splash_image" translatable="false">splash image</string>
     <string name="done" translatable="false">done</string>
     <string name="top_image" translatable="false">top image</string>
+    <string name="settings_icon" translatable="false">settings icon</string>
 </resources>
