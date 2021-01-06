@@ -25,7 +25,13 @@
         android:id="@+id/onBoardViewPager"
         android:name="com.ericg.sudofiemed.view.OnBoardViewPager"
         android:label="OnBoardViewPager"
-        tools:layout="@layout/fragment_on_board_view_pager" />
+        tools:layout="@layout/fragment_on_board_view_pager" >
+        <action
+            android:id="@+id/action_onBoardViewPager_to_firstAids"
+            app:destination="@id/firstAids"
+            app:popUpTo="@id/onBoardViewPager"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         tools:layout="@layout/fragment_first_aids"
         android:id="@+id/firstAids"
