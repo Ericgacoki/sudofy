@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -21,9 +22,9 @@
         <SearchView
             android:id="@+id/searchView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/round_search_view"
             android:queryHint="looking for?"
             android:saveEnabled="true"
@@ -38,23 +39,32 @@
         <ImageView
             android:id="@+id/settings"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="30dp"
             android:layout_margin="10dp"
             android:contentDescription="@string/settings_icon"
-            android:src="@drawable/ic_settings"
+            android:paddingBottom="2dp"
+            android:src="@drawable/ic_set"
             app:layout_constraintBottom_toBottomOf="@id/searchView"
             app:layout_constraintEnd_toEndOf="@id/imageViewFAids"
             app:layout_constraintTop_toTopOf="@id/searchView" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/firstAidsRecyclerview"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeToRefresh"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:paddingTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView"
-            tools:listitem="@layout/agreement_dialog" />
+            app:layout_constraintTop_toBottomOf="@+id/searchView">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/firstAidsRecyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1700F8FF"
+                android:paddingTop="15dp"
+                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                tools:listitem="@layout/first_aid_item" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
