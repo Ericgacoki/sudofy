@@ -58,12 +58,13 @@
             app:layout_constraintTop_toBottomOf="@+id/searchView">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:clipToPadding="true"
                 android:id="@+id/firstAidsRecyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#1700F8FF"
                 android:paddingTop="15dp"
-                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/first_aid_item" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
