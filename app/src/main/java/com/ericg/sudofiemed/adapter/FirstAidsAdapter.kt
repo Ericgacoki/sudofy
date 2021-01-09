@@ -18,6 +18,9 @@ class FirstAidsAdapter(
     private var firstAidItemBinding: FirstAidItemBinding? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FirstAidViewHolder {
+        val layoutInflater =
+            LayoutInflater.from(parent.context).inflate(R.layout.first_aid_item, parent, false)
+
         firstAidItemBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
             R.layout.first_aid_item,
@@ -26,7 +29,7 @@ class FirstAidsAdapter(
         )
 
         return FirstAidViewHolder(
-            firstAidItemBinding!!.root
+            layoutInflater
         )
     }
 
