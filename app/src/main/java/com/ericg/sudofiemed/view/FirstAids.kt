@@ -9,14 +9,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.ericg.sudofiemed.R
 import com.ericg.sudofiemed.adapter.FirstAidsAdapter
+import com.ericg.sudofiemed.databinding.FirstAidItemBinding
 import com.ericg.sudofiemed.databinding.FragmentFirstAidsBinding
 import com.ericg.sudofiemed.extensions.Extensions
 import com.ericg.sudofiemed.extensions.Extensions.toast
 import com.ericg.sudofiemed.model.FirstAid
+import java.util.*
 
 class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.ItemClick {
     private var firstAidsBinding: FragmentFirstAidsBinding? = null
-    lateinit var adapter: FirstAidsAdapter
+    private lateinit var adapter: FirstAidsAdapter
     private var listOfFirstAids: ArrayList<FirstAid> = arrayListOf()
     private var searchedFirstAids: ArrayList<FirstAid> = arrayListOf()
 
@@ -27,6 +29,7 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
     ): View? {
         firstAidsBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_first_aids, container, false)
+
         listOfFirstAids =
             arrayListOf(
                 FirstAid("Headache", 0, ""),
@@ -35,7 +38,7 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
                 FirstAid("Nose bleed", 3, ""),
                 FirstAid("Food poisoning", 4, ""),
                 FirstAid("Headache", 0, ""),
-                FirstAid("Cut", 1, ""),
+                FirstAid("Fracture", 1, ""),
                 FirstAid("Fire", 2, ""),
                 FirstAid("Nose bleed", 3, ""),
                 FirstAid("Food poisoning", 4, "")
@@ -43,6 +46,9 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
         adapter = FirstAidsAdapter(listOfFirstAids, this@FirstAids)
 
         searchFilter()
+        firstAidsBinding!!.swipeToRefresh.setOnRefreshListener {
+            onSwipe()
+        }
 
         return firstAidsBinding?.root?.apply {
 
@@ -57,7 +63,7 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
         }
     }
 
-    override fun itemDetails(view: View?, position: Int) {
+    override fun clickedItemDetails(view: View?, position: Int) {
         toast(
             "Clicked item ${position + 1} - ${adapter.firstAidsList[position].title}",
             Extensions.ToastDuration.LONG
@@ -66,8 +72,10 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         if (query!!.isNotEmpty()) {
+            searchedFirstAids = arrayListOf()
+
             listOfFirstAids.forEach { firstAid ->
-                if (firstAid.title.contains(query)) {
+                if (firstAid.title.trim().contains(query, true)) {
                     searchedFirstAids.add(firstAid)
                 }
                 adapter.firstAidsList = searchedFirstAids
@@ -76,14 +84,18 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
             adapter.firstAidsList = listOfFirstAids
         }
         adapter.notifyDataSetChanged()
+        updateUI()
 
         return true
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
         if (newText!!.isNotEmpty()) {
+            searchedFirstAids = arrayListOf()
+
             listOfFirstAids.forEach { firstAid ->
-                if (firstAid.title.contains(newText)) {
+                if (firstAid.title.trim().contains(newText, true)
+                ) {
                     searchedFirstAids.add(firstAid)
                 }
                 adapter.firstAidsList = searchedFirstAids
@@ -92,7 +104,22 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
             adapter.firstAidsList = listOfFirstAids
         }
         adapter.notifyDataSetChanged()
+        updateUI()
 
         return true
+    }
+
+    private fun updateUI() {
+        if (adapter.firstAidsList.isEmpty()) {
+            // Todo set no data found image visible
+        }
+    }
+
+    private fun onSwipe() {
+        adapter.firstAidsList = listOfFirstAids
+        adapter.notifyDataSetChanged()
+        updateUI()
+
+        firstAidsBinding!!.swipeToRefresh.isRefreshing = false
     }
 }
