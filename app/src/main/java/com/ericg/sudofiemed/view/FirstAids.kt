@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.ericg.sudofiemed.R
 import com.ericg.sudofiemed.adapter.FirstAidsAdapter
-import com.ericg.sudofiemed.databinding.FirstAidItemBinding
 import com.ericg.sudofiemed.databinding.FragmentFirstAidsBinding
 import com.ericg.sudofiemed.extensions.Extensions
 import com.ericg.sudofiemed.extensions.Extensions.toast
