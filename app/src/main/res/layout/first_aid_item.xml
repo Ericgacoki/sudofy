@@ -30,7 +30,7 @@
             android:paddingHorizontal="10dp"
             android:background="@drawable/name_bg"
             android:paddingVertical="4dp"
-            android:text="First Aid Name"
+            android:text="Aid Name"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="14sp"
