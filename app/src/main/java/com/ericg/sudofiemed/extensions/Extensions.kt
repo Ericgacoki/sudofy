@@ -4,6 +4,7 @@ import android.app.Activity
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import com.ericg.sudofiemed.extensions.Extensions.requestAppPermissions
 
 object Extensions {
     enum class ToastDuration {
@@ -26,7 +27,7 @@ object Extensions {
         }
     }
 
-    fun Activity.requestAppPermissions(permissions: Array<String>, requestCode: Int){
-        ActivityCompat.requestPermissions(this, permissions, requestCode)
+    fun Fragment.requestAppPermissions(permissions: Array<String>, requestCode: Int){
+        ActivityCompat.requestPermissions(requireActivity(), permissions, requestCode)
     }
 }
