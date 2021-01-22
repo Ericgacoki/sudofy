@@ -6,41 +6,43 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/first_aid_item_bg"
-        android:layout_margin="10dp">
+        android:layout_margin="5dp"
+        android:background="@drawable/first_aid_item_bg">
 
         <ImageView
             android:id="@+id/firstAidImage"
-            android:layout_width="wrap_content"
-            app:layout_constraintHorizontal_weight="0.5"
-            app:layout_constraintVertical_weight="1"
-            android:layout_height="150dp"
-            android:src="@drawable/chock"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:id="@+id/firstAidName"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-thin"
-            android:paddingHorizontal="10dp"
-            android:background="@drawable/name_bg"
-            android:paddingVertical="4dp"
-            android:text="Aid Name"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:adjustViewBounds="true"
+            android:background="@drawable/first_aid_item_bg"
+            android:src="@drawable/ic_image_place_holder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/firstAidName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/name_bg"
+            android:fontFamily="@font/d_hanna_bold"
+            android:gravity="bottom|start"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp"
+            android:text="Aid Name"
+            android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstAidImage" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
