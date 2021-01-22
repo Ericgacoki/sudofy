@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
+    android:label="Settings"
     app:startDestination="@id/splash">
 
     <fragment
@@ -25,7 +26,7 @@
         android:id="@+id/onBoardViewPager"
         android:name="com.ericg.sudofiemed.view.OnBoardViewPager"
         android:label="OnBoardViewPager"
-        tools:layout="@layout/fragment_on_board_view_pager" >
+        tools:layout="@layout/fragment_on_board_view_pager">
         <action
             android:id="@+id/action_onBoardViewPager_to_firstAids"
             app:destination="@id/firstAids"
@@ -33,8 +34,41 @@
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        tools:layout="@layout/fragment_first_aids"
         android:id="@+id/firstAids"
         android:name="com.ericg.sudofiemed.view.FirstAids"
-        android:label="FirstAids" />
+        android:label="FirstAids"
+        tools:layout="@layout/fragment_first_aids">
+        <action
+            android:id="@+id/action_firstAids_to_settings"
+            app:destination="@id/appSettings"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_firstAids_to_supportDeveloper"
+            app:destination="@id/supportDeveloper"
+            app:popUpTo="@id/firstAids"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/appSettings"
+        tools:layout="@layout/fragment_settings"
+        android:name="com.ericg.sudofiemed.view.Settings"
+        android:label="Settings" >
+        <action
+            android:id="@+id/action_settings_to_firstAids"
+            app:destination="@id/firstAids"
+            app:popUpTo="@id/appSettings"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_support_dev"
+        android:id="@+id/supportDeveloper"
+        android:name="com.ericg.sudofiemed.view.SupportDev"
+        android:label="SupportDev" >
+        <action
+            android:id="@+id/action_supportDeveloper_to_firstAids"
+            app:destination="@id/firstAids"
+            app:popUpTo="@id/supportDeveloper"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
