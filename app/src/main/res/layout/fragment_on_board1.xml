@@ -9,6 +9,7 @@
         tools:ignore="ContentDescription">
 
         <ImageView
+            android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:src="@drawable/gradient_top"
@@ -17,42 +18,65 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.helper.widget.Flow
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_step_1"
+            app:layout_constraintBottom_toTopOf="@+id/flow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            app:layout_constraintVertical_bias="0.117" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:flow_horizontalGap="5dp"
-            android:orientation="horizontal"
-            app:flow_wrapMode="none"
-            app:layout_constraintVertical_bias="0.95"
+            android:text="@string/on_board1_text"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/flow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:foregroundGravity="center"
+            android:orientation="horizontal"
+            app:constraint_referenced_ids="dot1on1,dot2on1,dot3on1"
+            app:flow_horizontalGap="5dp"
             app:flow_horizontalStyle="spread"
+            app:flow_wrapMode="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:constraint_referenced_ids="dot1on1,dot2on1,dot3on1"
-            />
+            app:layout_constraintVertical_bias="0.95" />
 
-            <ImageView
-                android:id="@+id/dot1on1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:src="@drawable/ic_dot_selected" />
+        <ImageView
+            android:id="@+id/dot1on1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/ic_dot_selected" />
 
-            <ImageView
-                android:id="@+id/dot2on1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:src="@drawable/ic_dot_not_selected" />
+        <ImageView
+            android:id="@+id/dot2on1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/ic_dot_not_selected" />
 
-            <ImageView
-                android:id="@+id/dot3on1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:src="@drawable/ic_dot_not_selected" />
+        <ImageView
+            android:id="@+id/dot3on1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/ic_dot_not_selected" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
