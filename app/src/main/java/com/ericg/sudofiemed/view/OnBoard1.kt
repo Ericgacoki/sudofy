@@ -17,10 +17,8 @@ class OnBoard1 : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        onBoard1Binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_on_board1, container, false)
+        onBoard1Binding = DataBindingUtil.inflate(inflater, R.layout.fragment_on_board1, container, false)
         return onBoard1Binding?.root.apply {
-
         }
     }
 
