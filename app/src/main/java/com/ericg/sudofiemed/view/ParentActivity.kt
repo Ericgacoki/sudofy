@@ -19,7 +19,6 @@ class ParentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         parentBinding = DataBindingUtil.setContentView(this, R.layout.activity_parent)
-        requestAppPermissions(permissions, requestCode)
     }
 
     override fun onDestroy() {
