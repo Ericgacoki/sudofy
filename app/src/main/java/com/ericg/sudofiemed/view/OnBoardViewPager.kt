@@ -34,12 +34,12 @@ class OnBoardViewPager : Fragment() {
         return onBoardViewPagerBinding?.root?.apply {
             onBoardViewPagerBinding?.onBoardViewPager2?.let {
                 it.adapter = viewPagerAdapter
-                it.setOnDragListener { view, event ->
+               /* it.setOnDragListener { _, event ->
                     if (event.y < 1){
                         toast("+ve event captured", Extensions.ToastDuration.LONG)
                     }
                     true
-                }
+                }*/
             }
         }
     }
