@@ -1,7 +1,25 @@
 <resources>
-    <string name="app_name">Sudo fie</string>
-    <string name="splash_image" translatable="false">splash image</string>
-    <string name="done" translatable="false">done</string>
-    <string name="top_image" translatable="false">top image</string>
-    <string name="settings_icon" translatable="false">settings icon</string>
+    <string name="app_name">Sudofy</string>
+    <string name="splash_image">splash image</string>
+    <string name="done">done</string>
+    <string name="top_image">top image</string>
+    <string name="settings_icon">settings icon</string>
+    <string name="desc_chock"> chock…</string>
+    <string name="desc_asphyxia"> asphyxia…</string>
+    <string name="desc_epilepsy"> epilepsy…</string>
+    <string name="desc_nose_breed"> nose breed…</string>
+    <string name="desc_head_ache"> head ache… </string>
+    <string name="desc_head_injury"> head injury… </string>
+    <string name="desc_poisoning">poisoning…</string>
+    <string name="desc_cut"> cut…</string>
+    <string name="desc_faint"> faint…</string>
+    <string name="desc_burn"> burn…</string>
+    <string name="desc_stroke"> stroke…</string>
+    <string name="desc_drug_overdose"> drug overdose…</string>
+    <string name="desc_heart_burn"> heart burn…</string>
+    <string name="desc_fire">fire… </string>
+    <string name="desc_fracture">fracture…</string>
+    <string name="on_board3_text">Enjoy your responsibility!</string>
+    <string name="on_board2_text">Rush to help with Sudofy</string>
+    <string name="on_board1_text">A few clicks will get you there</string>
 </resources>
