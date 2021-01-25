@@ -52,8 +52,8 @@ class Splash : Fragment() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         /** prevent memory leaks*/
         splashBinding = null
+        super.onDestroy()
     }
 }
