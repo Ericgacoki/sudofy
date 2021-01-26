@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/desc_lay_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/desc_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="10dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/first_aid_item_bg"
+                    android:src="@drawable/chock"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+
+                    android:id="@+id/love"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_love"
+                    app:layout_constraintBottom_toBottomOf="@+id/desc_image"
+                    app:layout_constraintEnd_toEndOf="@+id/desc_image"
+                    app:layout_constraintHorizontal_bias="0.041"
+                    app:layout_constraintStart_toStartOf="@+id/desc_image"
+                    app:layout_constraintTop_toTopOf="@+id/desc_image"
+                    app:layout_constraintVertical_bias="0.09"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_share"
+                    app:layout_constraintBottom_toBottomOf="@+id/desc_image"
+                    app:layout_constraintEnd_toEndOf="@+id/love"
+                    app:layout_constraintStart_toStartOf="@+id/love"
+                    app:layout_constraintTop_toBottomOf="@+id/love"
+                    app:layout_constraintVertical_bias="0.2"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/descTitle"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:fontFamily="@font/d_hanna_bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toTopOf="@+id/descText"
+                    app:layout_constraintEnd_toEndOf="@+id/desc_image"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="@+id/desc_image"
+                    app:layout_constraintTop_toBottomOf="@+id/desc_image"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="Title" />
+
+                <TextView
+                    android:id="@+id/descText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/desc_image"
+                    app:layout_constraintStart_toStartOf="@+id/desc_image"
+                    app:layout_constraintTop_toBottomOf="@id/desc_image"
+                    tools:text="Here is the description \n\n\n\n ..." />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
