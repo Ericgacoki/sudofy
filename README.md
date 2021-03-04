@@ -9,3 +9,5 @@ This project implements the following `Android` concepts:
 - `CarView`
 - `RecyclerView`
 - `ImgeVIew`
+
+... documentation in progress 🔥🔥
