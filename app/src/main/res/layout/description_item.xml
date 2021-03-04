@@ -24,23 +24,26 @@
                 <ImageView
                     android:id="@+id/desc_image"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="10dp"
+                    android:layout_height="0dp"
+                    android:maxHeight="300dp"
+                    android:layout_margin="5dp"
                     android:adjustViewBounds="true"
                     android:background="@drawable/first_aid_item_bg"
                     android:requiresFadingEdge="vertical"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/heart_burn2"
+                    android:src="@drawable/ic_image_place_holder"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
+                    android:background="@drawable/love_share_btn_bg"
                     android:id="@+id/love"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_love"
+                    android:padding="2dp"
                     app:layout_constraintBottom_toBottomOf="@+id/desc_image"
                     app:layout_constraintEnd_toEndOf="@+id/desc_image"
                     app:layout_constraintHorizontal_bias="0.041"
@@ -50,7 +53,9 @@
                     tools:ignore="ContentDescription" />
 
                 <ImageView
+                    android:background="@drawable/love_share_btn_bg"
                     android:id="@+id/share"
+                    android:padding="2dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_share"
