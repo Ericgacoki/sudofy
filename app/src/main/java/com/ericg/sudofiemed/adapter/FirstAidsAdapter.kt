@@ -36,9 +36,11 @@ class FirstAidsAdapter(
         }
 
         fun bind(firstAidData: FirstAidData) {
-            view.firstAidImage.setImageDrawable(firstAidData.image)
-            view.firstAidImage.clipToOutline = true
-            view.firstAidName.text = firstAidData.title
+            view.apply {
+                firstAidImage.setImageDrawable(firstAidData.image)
+                firstAidImage.clipToOutline = true
+                firstAidName.text = firstAidData.title
+            }
         }
 
         override fun onClick(itemView: View?) {
