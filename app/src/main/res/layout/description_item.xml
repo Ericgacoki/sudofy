@@ -28,14 +28,15 @@
                     android:layout_margin="10dp"
                     android:adjustViewBounds="true"
                     android:background="@drawable/first_aid_item_bg"
-                    android:src="@drawable/chock"
+                    android:requiresFadingEdge="vertical"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/heart_burn2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
-
                     android:id="@+id/love"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -62,13 +63,13 @@
 
                 <TextView
                     android:id="@+id/descTitle"
-                    android:layout_margin="10dp"
-                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:layout_marginBottom="1dp"
                     android:fontFamily="@font/d_hanna_bold"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/descText"
                     app:layout_constraintEnd_toEndOf="@+id/desc_image"
                     app:layout_constraintHorizontal_bias="0.497"
