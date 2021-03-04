@@ -42,7 +42,7 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
         firstAidsBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_first_aids, container, false)
 
-        // TODO use the respective description
+        // TODO add description
 
         listOfFirstAidData = arrayListOf(
             FirstAidData(
