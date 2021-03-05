@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.bumptech.glide.Glide
 import com.ericg.sudofiemed.R
 import com.ericg.sudofiemed.adapter.FirstAidsAdapter
 import com.ericg.sudofiemed.constants.Constants.permissions
@@ -190,8 +191,9 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
         // btmSheetDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         btmSheetDialog.apply {
-            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             setContentView(btmSheetBinding.root)
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
             setOnDismissListener {
                 loved = false
             }
@@ -200,6 +202,7 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
         btmSheetBinding.apply {
             descImage.apply {
                 clipToOutline = true
+                // Glide.with(requireContext()).load(item.image).into(this)
                 setImageDrawable(item.image)
             }
             descTitle.text = item.title
@@ -219,6 +222,7 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
     }
 
 
+    // This does completely nothing important
     private fun setLoveState(imageView: ImageView) {
         imageView.setImageResource(
             if (loved) {

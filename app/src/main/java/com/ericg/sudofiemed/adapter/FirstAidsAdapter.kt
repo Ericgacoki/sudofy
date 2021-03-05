@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.ericg.sudofiemed.databinding.FirstAidItemBinding
 import com.ericg.sudofiemed.model.FirstAidData
 
