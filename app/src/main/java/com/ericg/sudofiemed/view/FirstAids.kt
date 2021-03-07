@@ -48,12 +48,12 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
         listOfFirstAidData = arrayListOf(
             FirstAidData(
                 "Asphyxia",
-                ContextCompat.getDrawable(requireContext(), R.drawable.asphyxia_2),
+                ContextCompat.getDrawable(requireContext(), R.drawable.asphyxia),
                 getString(R.string.desc_asphyxia)
             ),
             FirstAidData(
                 "Epilepsy",
-                ContextCompat.getDrawable(requireContext(), R.drawable.epilepsy_1),
+                ContextCompat.getDrawable(requireContext(), R.drawable.epilepsy),
                 getString(R.string.desc_epilepsy)
             ),
             FirstAidData(
@@ -63,31 +63,31 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
             ),
             FirstAidData(
                 "Head injury",
-                ContextCompat.getDrawable(requireContext(), R.drawable.head_injury2),
+                ContextCompat.getDrawable(requireContext(), R.drawable.head_injury),
                 getString(R.string.desc_head_injury)
             ),
             FirstAidData(
                 "Stroke",
-                ContextCompat.getDrawable(requireContext(), R.drawable.stroke_1),
+                ContextCompat.getDrawable(requireContext(), R.drawable.stroke),
                 getString(R.string.desc_stroke)
             ),
             FirstAidData(
                 "Drug overdose",
-                ContextCompat.getDrawable(requireContext(), R.drawable.drug_overdose2),
+                ContextCompat.getDrawable(requireContext(), R.drawable.drug_overdose),
                 getString(R.string.desc_drug_overdose)
             ),FirstAidData(
                 "Faint",
-                ContextCompat.getDrawable(requireContext(), R.drawable.faint_1),
+                ContextCompat.getDrawable(requireContext(), R.drawable.faint),
                 getString(R.string.desc_faint)
             ),
             FirstAidData(
                 "Burn",
-                ContextCompat.getDrawable(requireContext(), R.drawable.hand_burn2),
+                ContextCompat.getDrawable(requireContext(), R.drawable.hand_burn),
                 getString(R.string.desc_burn)
             ),
             FirstAidData(
                 "Heartburn",
-                ContextCompat.getDrawable(requireContext(), R.drawable.heart_burn2),
+                ContextCompat.getDrawable(requireContext(), R.drawable.heart_burn),
                 getString(R.string.desc_heart_burn)
             ),
 
@@ -98,7 +98,7 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
             ),
             FirstAidData(
                 "Poisoning",
-                ContextCompat.getDrawable(requireContext(), R.drawable.poisoning_2),
+                ContextCompat.getDrawable(requireContext(), R.drawable.poisoning),
                 getString(R.string.desc_poisoning)
             ),
             FirstAidData(
