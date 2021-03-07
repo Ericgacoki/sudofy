@@ -1,8 +1,8 @@
 package com.ericg.sudofiemed.model
 
 import android.content.Context
+import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.preferencesKey
 import androidx.datastore.preferences.createDataStore
 import androidx.lifecycle.asLiveData
 import kotlinx.coroutines.flow.map
@@ -13,7 +13,7 @@ class DataStorePrefs(context: Context) {
     private val dataStorePrefs = context.createDataStore(name = "app_prefs")
 
     companion object {
-        val SHOW_ON_BOARD_KEY = preferencesKey<Boolean>("SHOW_ON_BOARD")
+        val SHOW_ON_BOARD_KEY = booleanPreferencesKey("SHOW_ON_BOARD")
     }
 
     suspend fun setPrefs(prefType: PrefsType, value: Boolean?) {
