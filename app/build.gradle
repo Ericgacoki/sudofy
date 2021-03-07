@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.ericg.sudofiemed"
-        minSdkVersion 21
+        minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
         versionName "Sudofy Med [BETA] V1.0"
@@ -31,10 +31,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures{
+    buildFeatures {
         dataBinding true
     }
-    aaptOptions{
+    aaptOptions {
         cruncherEnabled = false
     }
 }
@@ -51,16 +51,16 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     // Preferences DataStore
-    implementation "androidx.datastore:datastore-preferences:1.0.0-alpha07"
+    implementation "androidx.datastore:datastore-preferences:1.0.0-alpha06"
 
     // Proto DataStore #not used in this project
-    implementation "androidx.datastore:datastore-core:1.0.0-alpha07"
+   // implementation "androidx.datastore:datastore-core:1.0.0-alpha06"
 
     // liveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0"
 
     // folding cell layout
-    implementation 'com.ramotion.foldingcell:folding-cell:1.2.3'
+   // implementation 'com.ramotion.foldingcell:folding-cell:1.2.3'
 
     // Viewpager2
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
@@ -109,6 +109,6 @@ dependencies {
     implementation 'com.github.jd-alexander:LikeButton:0.2.3'
 
     // Glide
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    // implementation 'com.github.bumptech.glide:glide:4.11.0'
+    // annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
