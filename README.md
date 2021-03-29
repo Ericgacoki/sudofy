@@ -13,4 +13,4 @@ This project implements the following `Android` concepts:
 - `RecyclerView`
 - `ImgeVIew` 
 -->
-... documentation in progress and will be ready before the deadline🔥🔥
+... documentation in progress and will be ready before the deadline.🔥🔥
