@@ -27,7 +27,6 @@ class Details : Fragment() {
             DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
 
         fun share(){
-            // val intent = Intent(requireActivity(),)
         }
         
         fun handleClicks() {
