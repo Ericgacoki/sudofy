@@ -1,6 +1,6 @@
 ---
 name: Add title
-about: Describe this issue template's purpose here.
+about: Describe this issue purpose here.
 title: ''
 labels: bug, feature suggestion, improvements
 assignees: ''
