@@ -184,73 +184,6 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
         findNavController().navigate(action)
     }
 
-    //  showDescription(firstAidsAdapter.firstAidsListData[position])
-
-    /*var loved = false
-    private fun showDescription(item: FirstAidData) {
-        val btmSheetDialog = BottomSheetDialog(requireContext())
-        val btmSheetBinding: DescriptionItemBinding =
-            DescriptionItemBinding.inflate(LayoutInflater.from(requireContext()), null, false)
-       // btmSheetDialog.setCancelable(false)
-
-        // btmSheetDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        btmSheetDialog.apply {
-            setContentView(btmSheetBinding.root)
-            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-            setOnDismissListener {
-                loved = false
-            }
-        }.create()
-
-        btmSheetBinding.apply {
-            descImage.apply {
-                clipToOutline = true
-                // Glide.with(requireContext()).load(item.image).into(this)
-                setImageDrawable(item.image)
-            }
-            descTitle.text = item.title
-            descText.text = item.desc
-
-            love.setOnClickListener {
-                setLoveState(this.love)
-            }
-            share.setOnClickListener {
-                share(item)
-            }
-        }
-
-        btmSheetDialog.apply {
-            setCancelable(true)
-        }.show()
-    }*/
-
-    // This does completely nothing important
-    /*private fun setLoveState(imageView: ImageView) {
-        imageView.setImageResource(
-            if (loved) {
-                loved = false
-                R.drawable.ic_love
-            } else {
-                loved = true
-                R.drawable.ic_loved
-            }
-        )
-    }*/
-
-    /*private fun share(item: FirstAidData) {
-        // val imageUri = Uri.parse("android.resource:://${getPackageName()}/drawable/chock")
-        // val image = BitmapFactory.decodeResource(resources,R.drawable.chock)
-        // image.compress(Bitmap.CompressFormat.JPEG,100,Bytes)
-        Intent(Intent.ACTION_SEND).apply {
-            type = "text/plain"
-            putExtra(Intent.EXTRA_TEXT, "First Aid for: ${item.title}\n${item.desc}")
-            // putExtra(Intent.EXTRA_STREAM, image)
-            startActivity(Intent.createChooser(this, "Send via?"))
-        }
-    }*/
-
     private fun searchFilter() {
         firstAidsBinding?.searchView!!.apply {
             isSubmitButtonEnabled = true
@@ -322,7 +255,6 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
         searchedFirstAidData.clear()
         firstAidsAdapter.firstAidsListData = listOfFirstAidData
         firstAidsAdapter.notifyDataSetChanged()
-        // firstAidsBinding?.imgNoData?.visibility = INVISIBLE
         updateUI()
 
         this.isRefreshing = false

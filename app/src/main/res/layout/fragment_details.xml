@@ -37,8 +37,8 @@
         <View
             android:id="@+id/view"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:alpha="0.55"
+            android:layout_height="35dp"
+            android:alpha="0.50"
             android:background="@drawable/first_aid_item_bg"
             app:layout_constraintBottom_toBottomOf="@+id/detailsImage"
             app:layout_constraintEnd_toEndOf="@+id/detailsImage"
@@ -64,7 +64,7 @@
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toTopOf="@+id/view"
-            tools:text="Drug overdose" />
+            tools:text="Test Title" />
 
         <com.like.LikeButton
             android:id="@+id/detailsBtnLike"
@@ -101,7 +101,7 @@
                 android:id="@+id/detailsBodyText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="10dp"
+                android:paddingVertical="8dp"
                 android:textColor="@color/black"
                 tools:text="@tools:sample/lorem/random" />
         </ScrollView>

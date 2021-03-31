@@ -26,6 +26,9 @@ class Details : Fragment() {
         _detailsBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
 
+        fun share(){
+        }
+        
         fun handleClicks() {
 
             detailsBinding.apply {
@@ -33,7 +36,7 @@ class Details : Fragment() {
                     requireActivity().onBackPressed()
                 }
                 detailsBtnShare.setOnClickListener {
-                    // share()
+                    share()
                 }
             }
         }
