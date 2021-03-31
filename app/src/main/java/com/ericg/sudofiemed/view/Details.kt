@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.ericg.sudofiemed.R
 import com.ericg.sudofiemed.databinding.FragmentDetailsBinding
@@ -27,10 +26,10 @@ class Details : Fragment() {
         _detailsBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
 
-        fun handleClicks(){
+        fun handleClicks() {
 
             detailsBinding.apply {
-                detailsBtnBack.setOnClickListener{
+                detailsBtnBack.setOnClickListener {
                     requireActivity().onBackPressed()
                 }
                 detailsBtnShare.setOnClickListener {
