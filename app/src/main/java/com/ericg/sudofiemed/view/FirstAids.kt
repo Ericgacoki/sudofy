@@ -43,68 +43,66 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
         firstAidsBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_first_aids, container, false)
 
-        // TODO add description
-
         listOfFirstAidData = arrayListOf(
             FirstAidData(
                 "Asphyxia",
-                ContextCompat.getDrawable(requireContext(), R.drawable.asphyxia),
+                R.drawable.asphyxia,
                 getString(R.string.desc_asphyxia)
             ),
             FirstAidData(
                 "Epilepsy",
-                ContextCompat.getDrawable(requireContext(), R.drawable.epilepsy),
+                R.drawable.epilepsy,
                 getString(R.string.desc_epilepsy)
             ),
             FirstAidData(
                 "Head ache",
-                ContextCompat.getDrawable(requireContext(), R.drawable.head_ache),
+                R.drawable.head_ache,
                 getString(R.string.desc_head_ache)
             ),
             FirstAidData(
                 "Head injury",
-                ContextCompat.getDrawable(requireContext(), R.drawable.head_injury),
+                R.drawable.head_injury,
                 getString(R.string.desc_head_injury)
             ),
             FirstAidData(
                 "Stroke",
-                ContextCompat.getDrawable(requireContext(), R.drawable.stroke),
+                 R.drawable.stroke,
                 getString(R.string.desc_stroke)
             ),
             FirstAidData(
                 "Drug overdose",
-                ContextCompat.getDrawable(requireContext(), R.drawable.drug_overdose),
+                R.drawable.drug_overdose,
                 getString(R.string.desc_drug_overdose)
             ),FirstAidData(
                 "Faint",
-                ContextCompat.getDrawable(requireContext(), R.drawable.faint),
+                R.drawable.faint,
                 getString(R.string.desc_faint)
             ),
             FirstAidData(
                 "Burn",
-                ContextCompat.getDrawable(requireContext(), R.drawable.hand_burn),
+                R.drawable.hand_burn,
                 getString(R.string.desc_burn)
             ),
             FirstAidData(
                 "Heartburn",
-                ContextCompat.getDrawable(requireContext(), R.drawable.heart_burn),
+                R.drawable.heart_burn,
                 getString(R.string.desc_heart_burn)
             ),
 
             FirstAidData(
                 "Fracture",
-                ContextCompat.getDrawable(requireContext(), R.drawable.fracture),
+                R.drawable.fracture,
                 getString(R.string.desc_fracture)
             ),
             FirstAidData(
                 "Poisoning",
-                ContextCompat.getDrawable(requireContext(), R.drawable.poisoning),
+                 R.drawable.poisoning,
                 getString(R.string.desc_poisoning)
             ),
             FirstAidData(
                 "More",
-                ContextCompat.getDrawable(requireContext(), R.drawable.first_aid_kit),
-                ""
+                R.drawable.first_aid_kit,
+                "..."
             )
         )
 
@@ -129,7 +127,6 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
             }
         }
     }
-
 
     private fun onMenuIconClick(view: View) {
         firstAidsBinding?.menuIcon?.setOnClickListener {
@@ -178,15 +175,23 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
         }
     }
 
+    override fun clickedItemDetails(view: View?, position: Int){
+        showDetails(firstAidsAdapter.firstAidsListData[position])
+    }
 
-    override fun clickedItemDetails(view: View?, position: Int) =
-        showDescription(firstAidsAdapter.firstAidsListData[position])
+    private fun showDetails(item: FirstAidData){
+        val action = FirstAidsDirections.actionFirstAidsToDetails(item)
+        findNavController().navigate(action)
+    }
 
-    var loved = false
+    //  showDescription(firstAidsAdapter.firstAidsListData[position])
+
+    /*var loved = false
     private fun showDescription(item: FirstAidData) {
         val btmSheetDialog = BottomSheetDialog(requireContext())
         val btmSheetBinding: DescriptionItemBinding =
             DescriptionItemBinding.inflate(LayoutInflater.from(requireContext()), null, false)
+       // btmSheetDialog.setCancelable(false)
 
         // btmSheetDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
@@ -219,11 +224,10 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
         btmSheetDialog.apply {
             setCancelable(true)
         }.show()
-    }
-
+    }*/
 
     // This does completely nothing important
-    private fun setLoveState(imageView: ImageView) {
+    /*private fun setLoveState(imageView: ImageView) {
         imageView.setImageResource(
             if (loved) {
                 loved = false
@@ -233,19 +237,19 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
                 R.drawable.ic_loved
             }
         )
-    }
+    }*/
 
-    private fun share(item: FirstAidData) {
+    /*private fun share(item: FirstAidData) {
         // val imageUri = Uri.parse("android.resource:://${getPackageName()}/drawable/chock")
         // val image = BitmapFactory.decodeResource(resources,R.drawable.chock)
         // image.compress(Bitmap.CompressFormat.JPEG,100,Bytes)
         Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
-            putExtra(Intent.EXTRA_TEXT, "${item.title} \n${item.desc}")
+            putExtra(Intent.EXTRA_TEXT, "First Aid for: ${item.title}\n${item.desc}")
             // putExtra(Intent.EXTRA_STREAM, image)
             startActivity(Intent.createChooser(this, "Send via?"))
         }
-    }
+    }*/
 
     private fun searchFilter() {
         firstAidsBinding?.searchView!!.apply {
