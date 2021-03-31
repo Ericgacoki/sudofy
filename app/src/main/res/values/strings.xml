@@ -3,10 +3,55 @@
     <string name="splash_image">splash image</string>
     <string name="done">done</string>
     <string name="top_image">top image</string>
+
+    <!--onBoard texts-->
+    <string name="on_board3_text">Enjoy your responsibility!</string>
+    <string name="on_board2_text">Rush to help with Sudofy</string>
+    <string name="on_board1_text">A few clicks will get you there</string>
+
+    <!--Description/Remedies-->
     <string name="desc_asphyxia"> asphyxia…</string>
     <string name="desc_epilepsy"> epilepsy…</string>
     <string name="desc_head_ache"> head ache… </string>
-    <string name="desc_head_injury"> head injury… </string>
+    <string name="desc_head_injury">Treat any suspected head injury with the utmost caution, as they have the
+        potential to be very serious. Head injuries often lead to unconsciousness and all the attendant problems.
+        Also, head injuries can cause permanent damage to the brain.\n\n<b>Introduction</b>\n\n Keep in mind that a
+        casualty with any head injury may well be suffering from
+        neck and spine injuries also.\nIf the casualty is or has been unconscious, you suspect a fractured skull, or
+        their responses deteriorate CALL AN AMBULANCE IMMEDIATELY. Keep their airway clear and monitor their breathing.
+        \n\n<b>Possible Treatments</b>\n\n
+
+        <b>1.</b> If the casualty is unconscious, and you don’t wish to move them as you suspect
+        neck injury, you can use the jaw thrust method of keeping the airway clear \n\n
+
+        <b>2.</b> If you are unable to use the jaw thrust method, and you cannot keep the airway
+        clear, put the casualty in the recovery position but make sure the head, neck and body are
+        in line as you turn them to avoid any further damage to a neck or spinal injury. \n\n
+
+        <b>3.</b>If the casualty is conscious, you can help them lie down, making sure to keep the
+        head and neck in line with the body. You can help stop any movement of their head by placing
+        your hands on either side of the head and keeping it still. \n\n
+
+        <b>4.</b> If there is bleeding, help to control it by applying pressure directly to or around
+        the wound. However, if there is blood or fluid coming from an ear, do not try to stop the flow,
+        as the fluid must be allowed to drain. \n\n
+
+        <b>Key points when treating head injuries</b>\n\n
+        Monitor the casualty’s breathing, pulse and response
+        levels. If the casualty appears to recover, monitor them closely as they may well deteriorate and their
+        response levels drop.\n\n
+
+        If a casualty has been concussed, try to make sure they are not left alone for the next 24 hours.
+        Advise them to seek medical help as soon as possible.\n\n
+
+        If a casualty suffers any of the following in the few days after concussion, they should go to
+        A&amp;E immediately: worsening headache, nausea or vomiting, drowsiness, weakness in a limb, problems
+        speaking, dizzy spells, blood or fluid from an ear or the nose, problems seeing, seizures or confusion.\n\n
+
+        If the concussion is received playing sports, do not allow the concussed player to continue until they
+        have seen a doctor. Usually, concussed players are not allowed to participate for up to three weeks after
+        being concussed.\n\n Quick recovery!</string>
+
     <string name="desc_poisoning">poisoning…</string>
     <string name="desc_faint"> faint…</string>
     <string name="desc_burn"> burn…</string>
@@ -14,7 +59,5 @@
     <string name="desc_drug_overdose"> drug overdose…</string>
     <string name="desc_heart_burn"> heart burn…</string>
     <string name="desc_fracture">fracture…</string>
-    <string name="on_board3_text">Enjoy your responsibility!</string>
-    <string name="on_board2_text">Rush to help with Sudofy</string>
-    <string name="on_board1_text">A few clicks will get you there</string>
+
 </resources>
