@@ -48,6 +48,12 @@
             app:destination="@id/supportDeveloper"
             app:popUpTo="@id/firstAids"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_firstAids_to_details"
+            app:destination="@id/details" />
+        <argument
+            android:name="clickedItemDetails"
+            app:argType="com.ericg.sudofiemed.model.FirstAidData" />
     </fragment>
     <fragment
         android:id="@+id/appSettings"
@@ -70,5 +76,17 @@
             app:destination="@id/firstAids"
             app:popUpTo="@id/supportDeveloper"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/details"
+        tools:layout="@layout/fragment_details"
+        android:name="com.ericg.sudofiemed.view.Details"
+        android:label="Details" >
+        <action
+            android:id="@+id/action_details_to_firstAids"
+            app:destination="@id/firstAids" />
+        <argument
+            android:name="clickedItem"
+            app:argType="com.ericg.sudofiemed.model.FirstAidData" />
     </fragment>
 </navigation>
