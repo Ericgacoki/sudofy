@@ -15,7 +15,7 @@ android {
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
-        versionName "Sudofy Med [BETA] V1.0.0"
+        versionName "Sudofy Med [BETA] V1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
