@@ -33,7 +33,7 @@ class ParentActivity : AppCompatActivity() {
         if (backPressIsActive) {
             super.onBackPressed()
         } else {
-            toast("press again to exit", duration.LONG)
+            toast("press again", duration.SHORT)
             backPressIsActive = true
             Handler().postDelayed({ backPressIsActive = false }, 2000)
         }

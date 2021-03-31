@@ -38,7 +38,7 @@ class FirstAidsAdapter(
 
         fun bind(firstAidData: FirstAidData) {
             view.apply {
-                firstAidImage.setImageDrawable(firstAidData.image)
+                firstAidImage.setImageResource(firstAidData.image)
                 firstAidImage.clipToOutline = true
                 firstAidName.text = firstAidData.title
             }

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/detailsBtnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:elevation="5dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toTopOf="@+id/detailsBtnLike"
+            app:layout_constraintEnd_toEndOf="@+id/detailsImage"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="@id/detailsImage"
+            app:layout_constraintTop_toTopOf="@+id/detailsImage"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <ImageView
+            android:id="@+id/detailsImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/first_aid_item_bg"
+            android:maxHeight="300dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/drug_overdose" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:alpha="0.55"
+            android:background="@drawable/first_aid_item_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/detailsImage"
+            app:layout_constraintEnd_toEndOf="@+id/detailsImage"
+            app:layout_constraintStart_toStartOf="@+id/detailsImage"
+            app:layout_constraintTop_toTopOf="@+id/detailsImage"
+            app:layout_constraintVertical_bias="1" />
+
+        <TextView
+            android:id="@+id/detailsTitleText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:ellipsize="marquee"
+            android:gravity="fill_vertical"
+            android:maxLength="28"
+            android:paddingStart="2dp"
+            android:singleLine="true"
+            android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/detailsImage"
+            app:layout_constraintEnd_toStartOf="@+id/detailsBtnLike"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view"
+            tools:text="Drug overdose" />
+
+        <com.like.LikeButton
+            android:id="@+id/detailsBtnLike"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="16dp"
+            android:src="@drawable/ic_love"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintEnd_toStartOf="@+id/detailsBtnShare"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view" />
+
+        <ImageView
+            android:id="@+id/detailsBtnShare"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toBottomOf="@+id/detailsBtnLike"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/detailsBtnLike" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/detailsImage"
+            app:layout_constraintStart_toStartOf="@+id/detailsImage"
+            app:layout_constraintTop_toBottomOf="@+id/detailsImage">
+
+            <TextView
+                android:id="@+id/detailsBodyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:textColor="@color/black"
+                tools:text="@tools:sample/lorem/random" />
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
