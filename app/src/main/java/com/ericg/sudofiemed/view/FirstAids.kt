@@ -1,32 +1,25 @@
 package com.ericg.sudofiemed.view
 
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.*
 import android.view.View.INVISIBLE
-import android.widget.ImageView
 import android.widget.PopupMenu
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.bumptech.glide.Glide
 import com.ericg.sudofiemed.R
 import com.ericg.sudofiemed.adapter.FirstAidsAdapter
 import com.ericg.sudofiemed.constants.Constants.permissions
 import com.ericg.sudofiemed.constants.Constants.requestCode
-import com.ericg.sudofiemed.databinding.DescriptionItemBinding
 import com.ericg.sudofiemed.databinding.FragmentFirstAidsBinding
 import com.ericg.sudofiemed.extensions.Extensions
 import com.ericg.sudofiemed.extensions.Extensions.requestAppPermissions
 import com.ericg.sudofiemed.extensions.Extensions.toast
 import com.ericg.sudofiemed.model.FirstAidData
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import java.util.*
 
 class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.ItemClick {
@@ -66,14 +59,14 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
             ),
             FirstAidData(
                 "Stroke",
-                 R.drawable.stroke,
+                R.drawable.stroke,
                 getString(R.string.desc_stroke)
             ),
             FirstAidData(
                 "Drug overdose",
                 R.drawable.drug_overdose,
                 getString(R.string.desc_drug_overdose)
-            ),FirstAidData(
+            ), FirstAidData(
                 "Faint",
                 R.drawable.faint,
                 getString(R.string.desc_faint)
@@ -96,7 +89,7 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
             ),
             FirstAidData(
                 "Poisoning",
-                 R.drawable.poisoning,
+                R.drawable.poisoning,
                 getString(R.string.desc_poisoning)
             ),
             FirstAidData(
@@ -175,11 +168,11 @@ class FirstAids : Fragment(), SearchView.OnQueryTextListener, FirstAidsAdapter.I
         }
     }
 
-    override fun clickedItemDetails(view: View?, position: Int){
+    override fun clickedItemDetails(view: View?, position: Int) {
         showDetails(firstAidsAdapter.firstAidsListData[position])
     }
 
-    private fun showDetails(item: FirstAidData){
+    private fun showDetails(item: FirstAidData) {
         val action = FirstAidsDirections.actionFirstAidsToDetails(item)
         findNavController().navigate(action)
     }

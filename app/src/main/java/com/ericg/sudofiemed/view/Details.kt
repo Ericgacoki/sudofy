@@ -1,5 +1,6 @@
 package com.ericg.sudofiemed.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,10 +26,20 @@ class Details : Fragment() {
     ): View {
         _detailsBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
+        val item: FirstAidData = args.clickedItem
 
-        fun share(){
+        fun share(title: String, description: String) {
+            val data = "First Aid for $title\n\n$description"
+
+            Intent(Intent.ACTION_SEND).also {
+                it.apply {
+                    type = "text/plain"
+                    putExtra(Intent.EXTRA_TEXT, data)
+                }
+                startActivity(Intent.createChooser(it, "share via?"))
+            }
         }
-        
+
         fun handleClicks() {
 
             detailsBinding.apply {
@@ -36,14 +47,13 @@ class Details : Fragment() {
                     requireActivity().onBackPressed()
                 }
                 detailsBtnShare.setOnClickListener {
-                    share()
+                    share(item.title, item.desc)
                 }
             }
         }
 
         return detailsBinding.root.apply {
             handleClicks()
-            val item: FirstAidData = args.clickedItem
 
             detailsBinding.apply {
                 detailsImage.clipToOutline = true
