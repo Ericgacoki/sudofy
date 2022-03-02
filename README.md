@@ -13,4 +13,3 @@ This project implements the following `Android` concepts:
 - `RecyclerView`
 - `ImgeVIew` 
 -->
-... Documentation in progress 🔥🔥
